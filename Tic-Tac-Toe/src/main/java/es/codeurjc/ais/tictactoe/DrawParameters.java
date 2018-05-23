@@ -11,12 +11,13 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class DrawParameters {
 	
-	protected boolean player1Turn;
-
+	protected boolean player1Turn = true;
+	
 	@Parameters
 	public static Collection<Object[]> DrawPositions() {
-
-		Object [][] drawPositions = { { 1, 0, 2, 5, 3, 6, 4, 7, 8 } };
+		
+		Object [][] drawPositions = { {0,2,1,3,5,4,6,7,8}, 
+									  {1,0,2,5,3,6,4,7,8 } };
 
 		return Arrays.asList(drawPositions);
 
