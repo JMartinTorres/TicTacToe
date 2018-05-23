@@ -11,9 +11,12 @@ import static org.mockito.Mockito.verify;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.mockito.ArgumentCaptor;
 
+@RunWith(Parameterized.class)
 public class TicTacToeGameDrawTest extends DrawParameters {
 	
 	private TicTacToeGame testedGame = new TicTacToeGame(); // Paso 1 - Creación del objeto TicTacToeGame

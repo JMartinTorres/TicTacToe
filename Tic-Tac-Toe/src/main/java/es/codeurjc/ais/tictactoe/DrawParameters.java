@@ -8,7 +8,6 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
-@RunWith(Parameterized.class)
 public class DrawParameters {
 	
 	protected boolean player1Turn = true;
@@ -28,8 +27,9 @@ public class DrawParameters {
 	public static Collection<Object[]> DrawPositions() {
 		
 		Object [][] drawPositions = { {0,2,1,3,5,4,6,7,8}, 
-									  {1,0,2,5,3,6,4,7,8 },
-									  };
+									  {1,0,2,5,3,6,4,7,8}, 
+									  {0,1,2,3,5,4,6,8,7},
+									  {0,1,2,3,4,6,5,8,7} };
 
 		return Arrays.asList(drawPositions);
 
