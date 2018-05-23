@@ -5,23 +5,16 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
-import java.util.Collection;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameter;
 @RunWith(Parameterized.class)
 public class BoardPlayerWinTest extends WinParameters {
 	
 	private Board testBoard = new Board();
 	private int[] result = null;
-	private int[] parameter = new int[]{};
-	
-	@Parameter(0) public static int firstCell;
-	@Parameter(1) public static int secondCell;
-	@Parameter(2) public static int thirdCell;
 	
 	@Before 
 	public void setParameter () {

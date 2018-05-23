@@ -6,10 +6,17 @@ import java.util.Collection;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
 public class WinParameters {
+	
+	protected int[] parameter = new int[]{};
+	
+	@Parameter(0) public static int firstCell;
+	@Parameter(1) public static int secondCell;
+	@Parameter(2) public static int thirdCell;
 
 	@Parameters
 	public static Collection<Object[]> winPositions() {

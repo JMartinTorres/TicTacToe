@@ -2,34 +2,41 @@ package es.codeurjc.ais.tictactoe;
 
 import org.junit.Before;
 import static org.junit.Assert.assertTrue;
+
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class SystemTest {
+public class DrawSystemTest extends DrawParameters {
 
 	// private WebDriver driverFirefox = new FirefoxDriver();
 	private WebDriver driverChrome = new ChromeDriver();
 	private WebDriver driverChrome2 = new ChromeDriver();
 	// private WebDriverWait wait = new WebDriverWait(driverChrome, 30); // seconds
-	private boolean player1Turn;
 
 	@BeforeClass
 	public static void setChromeDriver() {
 		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+		WebApp.start();
 	}
 
 	@Before
 	public void setTurn() {
 		player1Turn = true;
+		parameter = new int[]{firstCell,secondCell,thirdCell, fourthCell,
+				fifthCell, sixthCell, seventhCell, eighthCell, ninethCell};
 	}
 
+	@AfterClass
+	public static void closeApp() {
+		WebApp.stop();
+	}
+	
 	@Test
 	public void testDraw() {
-
-		int[] parametro = { 0, 2, 1, 3, 5, 4, 6, 7, 8 };
 
 		driverChrome.get("localhost:8083");
 		driverChrome2.get("localhost:8083");
@@ -42,9 +49,9 @@ public class SystemTest {
 
 		for (int i = 0; i <= 8; i++) {
 			if (player1Turn) {
-				driverChrome.findElement(By.id("cell-" + parametro[i])).click();
+				driverChrome.findElement(By.id("cell-" + parameter[i])).click();
 			} else {
-				driverChrome2.findElement(By.id("cell-" + parametro[i])).click();
+				driverChrome2.findElement(By.id("cell-" + parameter[i])).click();
 			}
 			player1Turn = !player1Turn;
 		}
@@ -52,8 +59,7 @@ public class SystemTest {
 		assertTrue("El mensaje mostrado por el alert no es de empate. ",
 				driverChrome.switchTo().alert().getText().equals
 				(driverChrome2.switchTo().alert().getText()));
-
+		
 	}
-	
 
 }
