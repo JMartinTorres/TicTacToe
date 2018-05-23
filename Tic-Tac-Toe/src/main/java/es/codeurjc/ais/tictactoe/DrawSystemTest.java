@@ -30,8 +30,6 @@ public class DrawSystemTest extends DrawParameters {
 	@Before
 	public void setTurn() {
 		player1Turn = true;
-		parameter = new int[]{firstCell,secondCell,thirdCell, fourthCell,
-				fifthCell, sixthCell, seventhCell, eighthCell, ninethCell};
 	}
 
 	@AfterClass
@@ -53,9 +51,9 @@ public class DrawSystemTest extends DrawParameters {
 
 		for (int i = 0; i <= 8; i++) {
 			if (player1Turn) {
-				driverChrome.findElement(By.id("cell-" + parameter[i])).click();
+				driverChrome.findElement(By.id("cell-" + parameter.get(i))).click();
 			} else {
-				driverChrome2.findElement(By.id("cell-" + parameter[i])).click();
+				driverChrome2.findElement(By.id("cell-" + parameter.get(i))).click();
 			}
 			player1Turn = !player1Turn;
 		}

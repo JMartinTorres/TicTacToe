@@ -1,8 +1,11 @@
 package es.codeurjc.ais.tictactoe;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Random;
 
+import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
@@ -11,7 +14,23 @@ import org.junit.runners.Parameterized.Parameters;
 public class DrawParameters {
 	
 	protected boolean player1Turn = true;
-	protected int[] parameter = new int[]{};
+	protected ArrayList<Integer> parameter;
+	
+	@Parameters
+	public static Collection<Object[]> DrawPositions() {
+		
+		Object [][] drawPositions = { {0,1,2,3,5,4,6,8,7},
+									  {0,1,2,3,4,6,5,8,7},
+									  {0,2,1,3,5,4,6,7,8},
+									  {0,2,1,3,5,4,6,8,7},
+									  {1,0,2,5,3,6,4,7,8}, 
+									  {1,0,3,2,5,4,6,7,8},
+									  {1,0,3,2,4,5,6,7,8},
+									  {1,0,4,2,5,3,6,7,8} };
+
+		return Arrays.asList(drawPositions);
+
+	}
 
 	@Parameter(0) public static int firstCell;
 	@Parameter(1) public static int secondCell;
@@ -23,16 +42,12 @@ public class DrawParameters {
 	@Parameter(7) public static int eighthCell;
 	@Parameter(8) public static int ninethCell;
 	
-	@Parameters
-	public static Collection<Object[]> DrawPositions() {
-		
-		Object [][] drawPositions = { {0,2,1,3,5,4,6,7,8}, 
-									  {1,0,2,5,3,6,4,7,8}, 
-									  {0,1,2,3,5,4,6,8,7},
-									  {0,1,2,3,4,6,5,8,7} };
-
-		return Arrays.asList(drawPositions);
-
+	@Before
+	public void loadParameters() {
+		parameter = new ArrayList<>(Arrays.asList(firstCell,secondCell,thirdCell, fourthCell,
+				fifthCell, sixthCell, seventhCell, eighthCell, ninethCell));
 	}
+	
+	
 
 }

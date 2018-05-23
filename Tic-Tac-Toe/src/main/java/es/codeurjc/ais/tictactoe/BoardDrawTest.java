@@ -1,5 +1,6 @@
 package es.codeurjc.ais.tictactoe;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
@@ -11,27 +12,26 @@ import org.junit.runners.Parameterized;
 public class BoardDrawTest extends DrawParameters {
 	
 	private Board testBoard = new Board();
-	
-	@Before 
-	public void setParameter () {
-	parameter = new int[]{firstCell,secondCell,thirdCell, fourthCell,
-			fifthCell, sixthCell, seventhCell, eighthCell, ninethCell};
-	}
-	
+
 	@Test
 	public void checkDraw () {
 		
 		for (int i = 0; i <= 8; i++) {
-			testBoard.getCell(parameter[i]).active = true;
+			testBoard.getCell(parameter.get(i)).active = true;
 			if (player1Turn) {
-				testBoard.getCell(parameter[i]).value = "X";
+				testBoard.getCell(parameter.get(i)).value = "X";
 			} else {
-				testBoard.getCell(parameter[i]).value = "O";
+				testBoard.getCell(parameter.get(i)).value = "O";
 			}
 			player1Turn = !player1Turn;
 		}
 		
-		assertTrue("Se esperaba un empate.", testBoard.checkDraw());
+		// Comprobación checkDraw
+
+		assertTrue("Se debería haber producido un empate", testBoard.checkDraw());
+
+		// Comprobación getCellsIfWinner
+		
 		assertNull("No debería haber ganado ningún jugador.",
 				testBoard.getCellsIfWinner("X"));
 		assertNull("No debería haber ganado ningún jugador.", 

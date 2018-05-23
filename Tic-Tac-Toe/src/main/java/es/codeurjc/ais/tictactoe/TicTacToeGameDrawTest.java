@@ -26,13 +26,6 @@ public class TicTacToeGameDrawTest extends DrawParameters {
 	private Player p2 = new Player(1, "O", "Player 2"); // Paso 4 - Creación del objeto Player 2
 	private int turn = 1;
 	
-	@Before 
-	public void setParameter () {
-	parameter = new int[]{firstCell,secondCell,thirdCell, fourthCell,
-			fifthCell, sixthCell, seventhCell, eighthCell, ninethCell};
-	turn = 1;
-	}
-	
 	@Test
 	public void TicTacToeGameTestDraw () { 
 		
@@ -42,24 +35,21 @@ public class TicTacToeGameDrawTest extends DrawParameters {
 		testedGame.addPlayer(p1); // Paso 5 - Se añade Player 1 a TicTacToeGame
 		testedGame.addPlayer(p2); // Paso 5 - Se añade Player 2 a TicTacToeGame
 		
-		verify(c1, times(2)).sendEvent(eq(TicTacToeGame.EventType.JOIN_GAME), argThat(hasItems(p1,p2))); // Paso 6 - Se comprueba que Connection 1 recibe el evento JOIN_GAME, con Player 1 y Player 2
-		verify(c2, times(2)).sendEvent(eq(TicTacToeGame.EventType.JOIN_GAME), argThat(hasItems(p1,p2))); // Paso 7 - Se comprueba que Connection 2 recibe el evento JOIN_GAME, con Player 1 y Player 2
+		verify(c1, times(2)).sendEvent(eq(TicTacToeGame.EventType.JOIN_GAME), argThat(hasItems(p1, p2)));
+		// Paso 6 - Se comprueba que Connection 1 recibe el evento JOIN_GAME, con Player 1 y Player 2
+		verify(c2, times(2)).sendEvent(eq(TicTacToeGame.EventType.JOIN_GAME), argThat(hasItems(p1, p2)));
+		// Paso 7 - Se comprueba que Connection 2 recibe el evento JOIN_GAME, con Player 1 y Player 2
 		
-		for (int cell : parameter) {
-			if (turn<=9) {
-				if (turn % 2 == 1) {
-					assertTrue("Jugador incorrecto en el turno " + turn + ".", testedGame.checkTurn(0)); // Player 1 tiene id 0
-				} else {
-					assertTrue("Jugador incorrecto en el turno " + turn + ".", testedGame.checkTurn(1)); // Player 2 tiene id 1
-				}
-				testedGame.mark(cell);
-				turn++;
+		for (int i = 0; i <= 8; i++) {
+			if (i % 2 == 0) {
+				assertTrue("Jugador incorrecto en el turno " + (i+1) + ".", testedGame.checkTurn(0)); // Player 1 tiene id 0
 			} else {
-				assertFalse("No se espera ninguna victoria. ", testedGame.checkWinner().win);
-				assertTrue("Se espera un empate. ", testedGame.checkDraw());
+				assertTrue("Jugador incorrecto en el turno " + (i+1) + ".", testedGame.checkTurn(1)); // Player 2 tiene id 1
 			}
-				
+			testedGame.mark(parameter.get(i));
 		}
+		
+		assertFalse("No se esperaba una victoria. ", testedGame.checkWinner().win);
 		
 		ArgumentCaptor<Player> argument = ArgumentCaptor.forClass(Player.class);
 		
