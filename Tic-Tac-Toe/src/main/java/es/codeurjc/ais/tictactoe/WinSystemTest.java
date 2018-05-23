@@ -16,7 +16,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 @RunWith(Parameterized.class)
-public class DrawSystemTest extends DrawParameters {
+public class WinSystemTest extends WinParameters {
 
 	// private WebDriver driverFirefox = new FirefoxDriver();
 	private WebDriver driverChrome = new ChromeDriver();
@@ -28,12 +28,12 @@ public class DrawSystemTest extends DrawParameters {
 		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
 		WebApp.start();
 	}
-
+	
 	@Before
 	public void setTurn() {
-		player1Turn = true;
+		System.out.println();
 	}
-
+	
 	@AfterClass
 	public static void closeApp() {
 		WebApp.stop();
@@ -50,24 +50,28 @@ public class DrawSystemTest extends DrawParameters {
 
 		driverChrome2.findElement(By.id("nickname")).sendKeys("Player 2");
 		driverChrome2.findElement(By.id("startBtn")).click();
-
-		for (int i = 0; i <= 8; i++) {
+		
+		for (int i = 0; i < totalTurns; i++) {
 			if (i % 2 == 0) {
-				driverChrome.findElement(By.id("cell-" + parameter.get(i))).click();
+				int cell = parameter.get(i / 2);
+				driverChrome.findElement(By.id("cell-" + cell)).click();
 			} else {
-				driverChrome2.findElement(By.id("cell-" + parameter.get(i))).click();
+				int index = rnd.nextInt(loserPositions.size());
+				int cell = loserPositions.get(index);
+				loserPositions.remove(index);
+				driverChrome2.findElement(By.id("cell-" + cell)).click();
 			}
-			player1Turn = !player1Turn;
+
 		}
 		
 		String alertP1 = driverChrome.switchTo().alert().getText();
 		String alertP2 = driverChrome2.switchTo().alert().getText();
 		
 		assertEquals("El mensaje mostrado por el alert en el navegador del jugador 1"
-				+ " no es el de empate.", alertP1, "Draw!");
+				+ " no es el de empate.", alertP1, "Player 1 wins! Player 2 looses.");
 		
 		assertEquals("El mensaje mostrado por el alert en el navegador del jugador 2"
-				+ " no es el de empate.", alertP2, "Draw!");
+				+ " no es el de empate.", alertP2, "Player 1 wins! Player 2 looses.");
 		
 		driverChrome.close();
 		driverChrome2.close();
