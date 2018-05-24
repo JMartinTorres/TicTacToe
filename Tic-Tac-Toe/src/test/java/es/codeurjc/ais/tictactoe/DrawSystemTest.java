@@ -49,6 +49,13 @@ public class DrawSystemTest extends DrawParameters {
 			player1Turn = !player1Turn;
 		}
 		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		String alertP1 = driverChrome.switchTo().alert().getText();
 		String alertP2 = driverChrome2.switchTo().alert().getText();
 		
