@@ -14,7 +14,7 @@ public class BoardDrawTest extends DrawParameters {
 	private Board testBoard = new Board();
 
 	@Test
-	public void checkDraw () {
+	public void drawTest () {
 		
 		for (int i = 0; i <= 8; i++) {
 			testBoard.getCell(parameter.get(i)).active = true;

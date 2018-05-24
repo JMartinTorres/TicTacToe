@@ -33,7 +33,7 @@ public class TicTacToeGameWinTest extends WinParameters {
 	private Player p2 = new Player(1, "O", "Player 2"); // Paso 4 - Creación del objeto Player 2
 
 	@Test
-	public void TicTacToeGameTestPlayer1Win() {
+	public void player1WinTest() {
 
 		testedGame.addConnection(c1); // Paso 3 - Se añade Connection 1 a TicTacToeGame
 		testedGame.addConnection(c2); // Paso 3 - Se añade Connection 2 a TicTacToeGame
@@ -42,21 +42,19 @@ public class TicTacToeGameWinTest extends WinParameters {
 		testedGame.addPlayer(p2); // Paso 5 - Se añade Player 2 a TicTacToeGame
 
 		verify(c1, times(2)).sendEvent(eq(TicTacToeGame.EventType.JOIN_GAME), argThat(hasItems(p1, p2)));
-		// Paso 6 - Se comprueba que Connection 1 recibe el evento JOIN_GAME, con Player 1 y Player 2
+		// Paso 6 - Se comprueba que Connection 1 recibe el evento JOIN_GAME, con Player
+		// 1 y Player 2
 		verify(c2, times(2)).sendEvent(eq(TicTacToeGame.EventType.JOIN_GAME), argThat(hasItems(p1, p2)));
-		// Paso 7 - Se comprueba que Connection 2 recibe el evento JOIN_GAME, con Player 1 y Player 2
+		// Paso 7 - Se comprueba que Connection 2 recibe el evento JOIN_GAME, con Player
+		// 1 y Player 2
 
 		for (int i = 0; i < totalTurns; i++) {
 			if (i % 2 == 0) {
 				assertTrue("Jugador incorrecto en el turno " + (i+1) + ".", testedGame.checkTurn(0)); // Player 1 tiene id 0
-				testedGame.mark(parameter.get(i / 2));
 			} else {
 				assertTrue("Jugador incorrecto en el turno " + (i+1) + ".", testedGame.checkTurn(1)); // Player 2 tiene id 1
-				int index = rnd.nextInt(loserPositions.size());
-				testedGame.mark(loserPositions.get(index));
-				loserPositions.remove(index);
 			}
-
+			testedGame.mark(parameter.get(i));
 		}
 		
 		assertTrue("Se esperaba una victoria. ", testedGame.checkWinner().win);
@@ -74,19 +72,19 @@ public class TicTacToeGameWinTest extends WinParameters {
 		// Comprobación de envío de mensajes de fin de partida con el jugador correcto
 
 		verify(c1, times(1)).sendEvent(eq(TicTacToeGame.EventType.GAME_OVER), winnerArgument.capture());
-		
+
 		assertEquals("El jugador que se envía como ganador no es el correcto.",
 				winnerArgument.getValue().player.getName(), p1.getName());
-		
+
 		verify(c2, times(1)).sendEvent(eq(TicTacToeGame.EventType.GAME_OVER), winnerArgument.capture());
-		
+
 		assertEquals("El jugador que se envía como ganador no es el correcto.",
 				winnerArgument.getValue().player.getName(), p1.getName());
 
 	}
-	
+
 	@Test
-	public void TicTacToeGameTestPlayer2Win() {
+	public void player2WinTest() {
 
 		testedGame.addConnection(c1); // Paso 3 - Se añade Connection 1 a TicTacToeGame
 		testedGame.addConnection(c2); // Paso 3 - Se añade Connection 2 a TicTacToeGame
@@ -95,23 +93,23 @@ public class TicTacToeGameWinTest extends WinParameters {
 		testedGame.addPlayer(p2); // Paso 5 - Se añade Player 2 a TicTacToeGame
 
 		verify(c1, times(2)).sendEvent(eq(TicTacToeGame.EventType.JOIN_GAME), argThat(hasItems(p1, p2)));
-		// Paso 6 - Se comprueba que Connection 1 recibe el evento JOIN_GAME, con Player 1 y Player 2
+		// Paso 6 - Se comprueba que Connection 1 recibe el evento JOIN_GAME, con Player
+		// 1 y Player 2
 		verify(c2, times(2)).sendEvent(eq(TicTacToeGame.EventType.JOIN_GAME), argThat(hasItems(p1, p2)));
-		// Paso 7 - Se comprueba que Connection 2 recibe el evento JOIN_GAME, con Player 1 y Player 2
+		// Paso 7 - Se comprueba que Connection 2 recibe el evento JOIN_GAME, con Player
+		// 1 y Player 2
 
 		for (int i = 0; i <= totalTurns; i++) {
 			if (i % 2 == 0) {
-				assertTrue("Jugador incorrecto en el turno " + (i+1) + ".", testedGame.checkTurn(0)); // Player 2 tiene id 1
-				int index = rnd.nextInt(loserPositions.size());
-				testedGame.mark(loserPositions.get(index));
-				loserPositions.remove(index);
+				assertTrue("Jugador incorrecto en el turno " + (i+1) + ".", testedGame.checkTurn(0)); // Player 1 tiene id 0
+				testedGame.mark(parameter.get(i+1));
 			} else {
-				assertTrue("Jugador incorrecto en el turno " + (i+1) + ".", testedGame.checkTurn(1)); // Player 1 tiene id 0
-				testedGame.mark(parameter.get(i / 2));
+				assertTrue("Jugador incorrecto en el turno " + (i+1) + ".", testedGame.checkTurn(1)); // Player 2 tiene id 1
+				testedGame.mark(parameter.get(i-1));
 			}
-
+			
 		}
-		
+
 		assertTrue("Se esperaba una victoria. ", testedGame.checkWinner().win);
 
 		ArgumentCaptor<Player> playerArgument = ArgumentCaptor.forClass(Player.class);
@@ -119,20 +117,20 @@ public class TicTacToeGameWinTest extends WinParameters {
 
 		// Comprobación de envío de mensajes de cambio de turno y marcado de celdas
 
-		verify(c1, times(totalTurns+1)).sendEvent(eq(TicTacToeGame.EventType.SET_TURN), playerArgument.capture());
-		verify(c1, times(totalTurns+1)).sendEvent(eq(TicTacToeGame.EventType.MARK), playerArgument.capture());
-		verify(c2, times(totalTurns+1)).sendEvent(eq(TicTacToeGame.EventType.SET_TURN), playerArgument.capture());
-		verify(c2, times(totalTurns+1)).sendEvent(eq(TicTacToeGame.EventType.MARK), playerArgument.capture());
+		verify(c1, times(totalTurns + 1)).sendEvent(eq(TicTacToeGame.EventType.SET_TURN), playerArgument.capture());
+		verify(c1, times(totalTurns + 1)).sendEvent(eq(TicTacToeGame.EventType.MARK), playerArgument.capture());
+		verify(c2, times(totalTurns + 1)).sendEvent(eq(TicTacToeGame.EventType.SET_TURN), playerArgument.capture());
+		verify(c2, times(totalTurns + 1)).sendEvent(eq(TicTacToeGame.EventType.MARK), playerArgument.capture());
 
 		// Comprobación de envío de mensajes de fin de partida con el jugador correcto
 
 		verify(c1, times(1)).sendEvent(eq(TicTacToeGame.EventType.GAME_OVER), winnerArgument.capture());
-		
+
 		assertEquals("El jugador que se envía como ganador no es el correcto.",
 				winnerArgument.getValue().player.getName(), p2.getName());
-		
+
 		verify(c2, times(1)).sendEvent(eq(TicTacToeGame.EventType.GAME_OVER), winnerArgument.capture());
-		
+
 		assertEquals("El jugador que se envía como ganador no es el correcto.",
 				winnerArgument.getValue().player.getName(), p2.getName());
 

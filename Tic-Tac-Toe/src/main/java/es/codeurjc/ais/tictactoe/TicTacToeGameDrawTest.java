@@ -27,7 +27,7 @@ public class TicTacToeGameDrawTest extends DrawParameters {
 	private int turn = 1;
 	
 	@Test
-	public void TicTacToeGameTestDraw () { 
+	public void drawTest () { 
 		
 		testedGame.addConnection(c1); // Paso 3 - Se añade Connection 1 a TicTacToeGame
 		testedGame.addConnection(c2); // Paso 3 - Se añade Connection 2 a TicTacToeGame

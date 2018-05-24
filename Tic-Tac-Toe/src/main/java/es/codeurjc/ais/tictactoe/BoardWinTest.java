@@ -13,17 +13,21 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.openqa.selenium.By;
 
 @RunWith(Parameterized.class)
 public class BoardWinTest extends WinParameters {
 
 	private Board testBoard = new Board();
 	private int[] result;
+	private ArrayList<Integer> line;
 
 	@Test
-	public void checkPlayer1Win() {
-
-		for (int cell : parameter) {
+	public void player1WinTest() {
+		
+		line = new ArrayList<>(Arrays.asList(parameter.get(0),parameter.get(2),parameter.get(4)));
+		
+		for (int cell : line) {
 			testBoard.getCell(cell).active = true;
 			testBoard.getCell(cell).value = "X";
 		}
@@ -39,15 +43,17 @@ public class BoardWinTest extends WinParameters {
 
 		assertNull("El jugador pasado no debería haber ganado la partida.", testBoard.getCellsIfWinner("O"));
 
-		assertEquals("Se esperaban las celdas " + parameter + " y se han recibido las celdas ",
-				parameter, new ArrayList<Integer>(){{ for (int i : result) add(i); }});
+		assertEquals("Se esperaban las celdas " + line + " y se han recibido las celdas ",
+				line, new ArrayList<Integer>(){{ for (int i : result) add(i); }});
 
 	}
 
 	@Test
-	public void checkPlayer2Win() {
+	public void player2WinTest() {
+		
+		line = new ArrayList<>(Arrays.asList(parameter.get(0),parameter.get(2),parameter.get(4)));
 
-		for (int cell : parameter) {
+		for (int cell : line) {
 			testBoard.getCell(cell).active = true;
 			testBoard.getCell(cell).value = "O";
 		}
@@ -63,8 +69,8 @@ public class BoardWinTest extends WinParameters {
 
 		assertNull("El jugador pasado no debería haber ganado la partida.", testBoard.getCellsIfWinner("X"));
 
-		assertEquals("Se esperaban las celdas " + parameter + " y se han recibido las celdas " + result,
-				parameter, new ArrayList<Integer>(){{ for (int i : result) add(i); }});
+		assertEquals("Se esperaban las celdas " + line + " y se han recibido las celdas " + result,
+				line, new ArrayList<Integer>(){{ for (int i : result) add(i); }});
 
 	}
 

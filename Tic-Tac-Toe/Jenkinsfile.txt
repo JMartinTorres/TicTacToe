@@ -1,0 +1,29 @@
+pipeline {
+    tools {
+        maven "M3"
+    }
+    agent any
+    stages {
+       stage("Preparation") {
+            steps {
+                git 'https://github.com/JMartinTorres/TicTacToe.git'
+            }
+       }
+       stage("Test") {
+          steps {
+            script {
+                if(isUnix()) {
+                    sh "cd Tic-Tac-Toe ; mvn test"
+                } else {
+                    bat(/${M2_HOME}\bin\mvn -f Tic-Tac-Toe\pom.xml test/)
+                }
+            }
+          }
+        }
+     }
+     post {
+         always {
+            junit "Tic-Tac-Toe/**/target/surefire-reports/TEST-*.xml"
+        }
+     }
+  }

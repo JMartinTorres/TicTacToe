@@ -5,6 +5,8 @@ import org.junit.Before;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -28,19 +30,18 @@ public class DrawSystemTest extends DrawParameters {
 		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
 		WebApp.start();
 	}
-
+	
+	
 	@Before
 	public void setTurn() {
 		player1Turn = true;
 	}
-
-	@AfterClass
-	public static void closeApp() {
-		WebApp.stop();
-	}
 	
 	@Test
-	public void testDraw() {
+	public void drawTest() {
+		
+//		driverChrome.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
+//		driverChrome2.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 
 		driverChrome.get("localhost:8083");
 		driverChrome2.get("localhost:8083");
@@ -58,6 +59,13 @@ public class DrawSystemTest extends DrawParameters {
 				driverChrome2.findElement(By.id("cell-" + parameter.get(i))).click();
 			}
 			player1Turn = !player1Turn;
+		}
+		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		String alertP1 = driverChrome.switchTo().alert().getText();
