@@ -57,10 +57,10 @@ public class WinSystemTest extends WinParameters {
 		String alertP2 = driverChrome2.switchTo().alert().getText();
 		
 		assertEquals("El mensaje mostrado por el alert en el navegador del jugador 1"
-				+ " no es el de empate.", alertP1, "Player 1 wins! Player 2 looses.");
+				+ " no es el de victoria del jugador 1.", alertP1, "Player 1 wins! Player 2 looses.");
 		
 		assertEquals("El mensaje mostrado por el alert en el navegador del jugador 2"
-				+ " no es el de empate.", alertP2, "Player 1 wins! Player 2 looses.");
+				+ " no es el de victoria del jugador 1.", alertP2, "Player 1 wins! Player 2 looses.");
 		
 		driverChrome.close();
 		driverChrome2.close();
@@ -99,10 +99,10 @@ public class WinSystemTest extends WinParameters {
 		String alertP2 = driverChrome2.switchTo().alert().getText();
 		
 		assertEquals("El mensaje mostrado por el alert en el navegador del jugador 1"
-				+ " no es el de empate.", alertP1, "Player 2 wins! Player 1 looses.");
+				+ " no es el de victoria del jugador 2.", alertP1, "Player 2 wins! Player 1 looses.");
 		
 		assertEquals("El mensaje mostrado por el alert en el navegador del jugador 2"
-				+ " no es el de empate.", alertP2, "Player 2 wins! Player 1 looses.");
+				+ " no es el de victoria del jugador 2.", alertP2, "Player 2 wins! Player 1 looses.");
 		
 		/* Los navegadores se cierran para evitar una acumulación indeseada de conexiones 
 		 * a la aplicación. */
