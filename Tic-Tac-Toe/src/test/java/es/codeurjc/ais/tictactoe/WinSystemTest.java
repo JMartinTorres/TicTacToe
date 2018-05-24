@@ -26,8 +26,8 @@ public class WinSystemTest extends WinParameters {
 	@Test
 	public void player1WinTest() {
 		
-		driverChrome.get("localhost:8080");
-		driverChrome2.get("localhost:8080");
+		driverChrome.get("localhost:8083");
+		driverChrome2.get("localhost:8083");
 
 		driverChrome.findElement(By.id("nickname")).sendKeys("Player 1");
 		driverChrome.findElement(By.id("startBtn")).click();
@@ -70,8 +70,8 @@ public class WinSystemTest extends WinParameters {
 	@Test
 	public void player2WinTest() {
 		
-		driverChrome.get("localhost:8080");
-		driverChrome2.get("localhost:8080");
+		driverChrome.get("localhost:8083");
+		driverChrome2.get("localhost:8083");
 
 		driverChrome.findElement(By.id("nickname")).sendKeys("Player 1");
 		driverChrome.findElement(By.id("startBtn")).click();

@@ -18,7 +18,7 @@ public class WinParameters {
 	 * El jugador perdedor marca las impares, que no forman ninguna línea. No se
 	 * emplean arrays de 6 elementos por ninguna razón concreta. 
 	 */
-	@Parameters
+	@Parameters(name = "Celdas ganador [{0},{2},{4}], celdas perdedor [{1},{3},{5}]")
 	public static Collection<Object[]> winPositions() {
 
 		Object[][] winPositions = { { 0,3,1,5,2,7 },

@@ -16,7 +16,7 @@ public class DrawParameters {
 	/* Se cumple con todos los arrays siguientes que si el jugador que tiene el primer turno
 	 * marca las celdas correspondientes a las posiciones pares de los mismos y el otro jugador
 	 * elige aquellas en las posiciones impares, se alcanza una situación de empate. */
-	@Parameters
+	@Parameters (name = "Celdas Player 1 [{0},{2},{4},{6},{8}], celdas Player 2 [{1},{3},{5},{7}]")
 	public static Collection<Object[]> DrawPositions() {
 		
 		Object [][] drawPositions = { {0,1,2,3,5,4,6,8,7},
