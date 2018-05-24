@@ -31,8 +31,8 @@ public class DrawSystemTest extends DrawParameters {
 	@Test
 	public void drawTest() {
 		
-		driverChrome.get("localhost:8083");
-		driverChrome2.get("localhost:8083");
+		driverChrome.get("localhost:8080");
+		driverChrome2.get("localhost:8080");
 
 		driverChrome.findElement(By.id("nickname")).sendKeys("Player 1");
 		driverChrome.findElement(By.id("startBtn")).click();

@@ -26,14 +26,14 @@ Fetching upstream changes from https://github.com/JMartinTorres/TicTacToe.git
  > git.exe fetch --tags --progress https://github.com/JMartinTorres/TicTacToe.git +refs/heads/*:refs/remotes/origin/*
  > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
  > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
-Checking out Revision 9b44890dd753104e52f80cbaab9d18e841189378 (refs/remotes/origin/master)
+Checking out Revision e30eee152582e2fe6639a0582e42b043590c36de (refs/remotes/origin/master)
  > git.exe config core.sparsecheckout # timeout=10
- > git.exe checkout -f 9b44890dd753104e52f80cbaab9d18e841189378
+ > git.exe checkout -f e30eee152582e2fe6639a0582e42b043590c36de
  > git.exe branch -a -v --no-abbrev # timeout=10
  > git.exe branch -D master # timeout=10
- > git.exe checkout -b master 9b44890dd753104e52f80cbaab9d18e841189378
-Commit message: "Espera en DrawSystemTest"
- > git.exe rev-list --no-walk 68a2dfd7261a8bdaf2f7a987ba029f58ae00175c # timeout=10
+ > git.exe checkout -b master e30eee152582e2fe6639a0582e42b043590c36de
+Commit message: "8083 para ejecuci�n en Jenkins"
+ > git.exe rev-list --no-walk e61bc6baa4958efe59d619d9cf2ddfe05714aab1 # timeout=10
 [Pipeline] }
 [Pipeline] // withEnv
 [Pipeline] }
@@ -60,7 +60,7 @@ C:\Users\Javier\.jenkins\workspace\TicTacToe_Tests>C:\Users\Javier\.jenkins\tool
 [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ j.martintor-am.pazos ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
 [INFO] Copying 1 resource
-[INFO] Copying 8 resources
+[INFO] Copying 9 resources
 [INFO] 
 [INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ j.martintor-am.pazos ---
 [INFO] Nothing to compile - all classes are up to date
@@ -80,7 +80,7 @@ C:\Users\Javier\.jenkins\workspace\TicTacToe_Tests>C:\Users\Javier\.jenkins\tool
  T E S T S
 -------------------------------------------------------
 Running es.codeurjc.ais.tictactoe.BoardDrawTest
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in es.codeurjc.ais.tictactoe.BoardDrawTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec - in es.codeurjc.ais.tictactoe.BoardDrawTest
 Running es.codeurjc.ais.tictactoe.BoardWinTest
 Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in es.codeurjc.ais.tictactoe.BoardWinTest
 Running es.codeurjc.ais.tictactoe.DrawSystemTest
@@ -93,9 +93,9 @@ Running es.codeurjc.ais.tictactoe.DrawSystemTest
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v1.5.9.RELEASE)
 
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 35457
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 18896
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 6713
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 43659
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 0
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 0
@@ -151,9 +151,9 @@ Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":null}' to client 0
 Sent message '{"action":"GAME_OVER","data":null}' to client 1
 Sent message '{"action":"RECONNECT","data":null}' to client 1
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 13882
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 14673
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 24810
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 6844
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 2
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 2
@@ -209,9 +209,9 @@ Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":null}' to client 2
 Sent message '{"action":"GAME_OVER","data":null}' to client 3
 Sent message '{"action":"RECONNECT","data":null}' to client 3
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 41049
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 26704
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 41913
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 44675
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 4
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 4
@@ -267,9 +267,9 @@ Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":null}' to client 4
 Sent message '{"action":"GAME_OVER","data":null}' to client 5
 Sent message '{"action":"RECONNECT","data":null}' to client 5
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 32819
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 26197
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 3161
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 45997
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 6
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 6
@@ -325,9 +325,9 @@ Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":null}' to client 6
 Sent message '{"action":"GAME_OVER","data":null}' to client 7
 Sent message '{"action":"RECONNECT","data":null}' to client 7
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 17812
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 33567
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 40654
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 46013
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 8
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 8
@@ -383,9 +383,9 @@ Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":null}' to client 8
 Sent message '{"action":"GAME_OVER","data":null}' to client 9
 Sent message '{"action":"RECONNECT","data":null}' to client 9
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 27376
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 13801
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 25843
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 7166
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client a
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client a
@@ -441,9 +441,9 @@ Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":null}' to client a
 Sent message '{"action":"GAME_OVER","data":null}' to client b
 Sent message '{"action":"RECONNECT","data":null}' to client b
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 40578
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 27224
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 36569
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 29463
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client c
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client c
@@ -499,9 +499,9 @@ Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":null}' to client c
 Sent message '{"action":"GAME_OVER","data":null}' to client d
 Sent message '{"action":"RECONNECT","data":null}' to client d
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 10474
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 41894
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 25388
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 40260
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client e
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client e
@@ -557,15 +557,15 @@ Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":null}' to client e
 Sent message '{"action":"GAME_OVER","data":null}' to client f
 Sent message '{"action":"RECONNECT","data":null}' to client f
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 159.432 sec - in es.codeurjc.ais.tictactoe.DrawSystemTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 139.366 sec - in es.codeurjc.ais.tictactoe.DrawSystemTest
 Running es.codeurjc.ais.tictactoe.TicTacToeGameDrawTest
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.007 sec - in es.codeurjc.ais.tictactoe.TicTacToeGameDrawTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.202 sec - in es.codeurjc.ais.tictactoe.TicTacToeGameDrawTest
 Running es.codeurjc.ais.tictactoe.TicTacToeGameWinTest
-Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec - in es.codeurjc.ais.tictactoe.TicTacToeGameWinTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec - in es.codeurjc.ais.tictactoe.TicTacToeGameWinTest
 Running es.codeurjc.ais.tictactoe.WinSystemTest
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 38890
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 33638
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 46304
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 9445
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 10
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 10
@@ -601,9 +601,9 @@ Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[0,1,2]}}' to client 10
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[0,1,2]}}' to client 11
 Sent message '{"action":"RECONNECT","data":null}' to client 11
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 43000
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 2527
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 42036
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 27722
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 12
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 12
@@ -644,9 +644,9 @@ Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[0,1,2]}}' to client 12
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[0,1,2]}}' to client 13
 Sent message '{"action":"RECONNECT","data":null}' to client 13
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 20096
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 35884
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 10609
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 36984
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 14
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 14
@@ -682,9 +682,9 @@ Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[3,4,5]}}' to client 14
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[3,4,5]}}' to client 15
 Sent message '{"action":"RECONNECT","data":null}' to client 15
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 4876
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 8377
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 41382
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 24030
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 16
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 16
@@ -725,9 +725,9 @@ Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"O","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[3,4,5]}}' to client 16
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[3,4,5]}}' to client 17
 Sent message '{"action":"RECONNECT","data":null}' to client 17
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 26060
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 16957
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 3092
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 25316
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 18
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 18
@@ -763,9 +763,9 @@ Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[6,7,8]}}' to client 18
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[6,7,8]}}' to client 19
 Sent message '{"action":"RECONNECT","data":null}' to client 19
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 33139
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 10999
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 3203
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 28261
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 1a
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 1a
@@ -806,9 +806,9 @@ Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[6,7,8]}}' to client 1a
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[6,7,8]}}' to client 1b
 Sent message '{"action":"RECONNECT","data":null}' to client 1b
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 45746
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 17482
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 19741
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 6112
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 1c
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 1c
@@ -844,9 +844,9 @@ Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[0,3,6]}}' to client 1c
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[0,3,6]}}' to client 1d
 Sent message '{"action":"RECONNECT","data":null}' to client 1d
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 14477
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 36452
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 46070
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 12151
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 1e
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 1e
@@ -887,9 +887,9 @@ Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"O","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[0,3,6]}}' to client 1e
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[0,3,6]}}' to client 1f
 Sent message '{"action":"RECONNECT","data":null}' to client 1f
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 16386
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 48780
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 11378
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 15684
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 20
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 20
@@ -925,9 +925,9 @@ Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[1,4,7]}}' to client 20
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[1,4,7]}}' to client 21
 Sent message '{"action":"RECONNECT","data":null}' to client 21
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 16754
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 5392
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 27335
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 33715
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 22
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 22
@@ -968,9 +968,9 @@ Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[1,4,7]}}' to client 22
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[1,4,7]}}' to client 23
 Sent message '{"action":"RECONNECT","data":null}' to client 23
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 46155
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 31699
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 20806
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 46978
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 24
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 24
@@ -1006,9 +1006,9 @@ Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[2,5,8]}}' to client 24
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[2,5,8]}}' to client 25
 Sent message '{"action":"RECONNECT","data":null}' to client 25
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 23990
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 5087
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 47058
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 27493
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 26
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 26
@@ -1049,9 +1049,9 @@ Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[2,5,8]}}' to client 26
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[2,5,8]}}' to client 27
 Sent message '{"action":"RECONNECT","data":null}' to client 27
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 21955
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 8528
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 7882
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 38499
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 28
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 28
@@ -1087,9 +1087,9 @@ Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[0,4,8]}}' to client 28
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[0,4,8]}}' to client 29
 Sent message '{"action":"RECONNECT","data":null}' to client 29
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 35094
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 23898
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 10785
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 33729
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 2a
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 2a
@@ -1130,9 +1130,9 @@ Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[0,4,8]}}' to client 2a
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[0,4,8]}}' to client 2b
 Sent message '{"action":"RECONNECT","data":null}' to client 2b
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 4331
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 48430
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 11364
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 5188
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 2c
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 2c
@@ -1168,9 +1168,9 @@ Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[6,4,2]}}' to client 2c
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[6,4,2]}}' to client 2d
 Sent message '{"action":"RECONNECT","data":null}' to client 2d
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 3466
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 35785
 Only local connections are allowed.
-Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 2761
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 48086
 Only local connections are allowed.
 Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 2e
 Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 2e
@@ -1211,7 +1211,7 @@ Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[6,4,2]}}' to client 2e
 Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[6,4,2]}}' to client 2f
 Sent message '{"action":"RECONNECT","data":null}' to client 2f
-Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 263.207 sec - in es.codeurjc.ais.tictactoe.WinSystemTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 178.079 sec - in es.codeurjc.ais.tictactoe.WinSystemTest
 
 Results :
 
@@ -1220,9 +1220,9 @@ Tests run: 72, Failures: 0, Errors: 0, Skipped: 0
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 07:14 min
-[INFO] Finished at: 2018-05-24T18:19:17+02:00
-[INFO] Final Memory: 30M/276M
+[INFO] Total time: 05:28 min
+[INFO] Finished at: 2018-05-24T19:34:00+02:00
+[INFO] Final Memory: 29M/219M
 [INFO] ------------------------------------------------------------------------
 [Pipeline] }
 [Pipeline] // script
