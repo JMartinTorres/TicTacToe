@@ -1,22 +1,12 @@
 package es.codeurjc.ais.tictactoe;
 
-import org.junit.Before;
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
-
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -35,35 +25,10 @@ public class WinSystemTest extends WinParameters {
 		WebApp.start();
 	}
 	
-//	private void waitForAlert(WebDriver driver)
-//	{
-//		   int i=0;
-//		   while(i++<5)
-//		   {
-//		        try
-//		        {
-//		            Alert alert = driver.switchTo().alert();
-//		            break;
-//		        }
-//		        catch(NoAlertPresentException e)
-//		        {
-//		          try {
-//					Thread.sleep(1000);
-//				} catch (InterruptedException e1) {
-//					// TODO Auto-generated catch block
-//					e1.printStackTrace();
-//				}
-//		          continue;
-//		        }
-//		   }
-//		}
 	
 	@Test
 	public void player1WinTest() {
 		
-//		driverChrome.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
-//		driverChrome2.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
-
 		driverChrome.get("localhost:8083");
 		driverChrome2.get("localhost:8083");
 
@@ -81,6 +46,8 @@ public class WinSystemTest extends WinParameters {
 			}
 
 		}
+		
+		// Se hace una espera de un segundo para asegurar que aparece el mensaje del alert.
 		
 		try {
 			Thread.sleep(1000);
@@ -103,27 +70,8 @@ public class WinSystemTest extends WinParameters {
 		
 	}
 	
-//	public int nonWinnerCell (ArrayList<Integer> player1Cells) {
-//		
-//		for (Object line: winPositions()) {
-//			Integer[] winPosition = (Integer []) line;
-//			
-//			for (Integer allowedCell : loserPositions) {
-//				if (!parameter.contains(allowedCell) && 
-//						!player1Cells.contains(allowedCell)) {
-//					return allowedCell;
-//				}
-//			}
-//			
-//		}
-//		
-//		return 1;
-//	}
-	
 	@Test
 	public void player2WinTest() {
-		
-		ArrayList<Integer> player1Cells = new ArrayList<>();
 		
 		driverChrome.get("localhost:8083");
 		driverChrome2.get("localhost:8083");

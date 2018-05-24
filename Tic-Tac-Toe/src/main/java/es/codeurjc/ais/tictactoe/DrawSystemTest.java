@@ -1,14 +1,8 @@
 package es.codeurjc.ais.tictactoe;
 
-import org.junit.Before;
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
-import java.util.concurrent.TimeUnit;
-
-import org.junit.After;
-import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,7 +25,6 @@ public class DrawSystemTest extends DrawParameters {
 		WebApp.start();
 	}
 	
-	
 	@Before
 	public void setTurn() {
 		player1Turn = true;
@@ -40,9 +33,6 @@ public class DrawSystemTest extends DrawParameters {
 	@Test
 	public void drawTest() {
 		
-//		driverChrome.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
-//		driverChrome2.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
-
 		driverChrome.get("localhost:8083");
 		driverChrome2.get("localhost:8083");
 
@@ -59,13 +49,6 @@ public class DrawSystemTest extends DrawParameters {
 				driverChrome2.findElement(By.id("cell-" + parameter.get(i))).click();
 			}
 			player1Turn = !player1Turn;
-		}
-		
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 		
 		String alertP1 = driverChrome.switchTo().alert().getText();

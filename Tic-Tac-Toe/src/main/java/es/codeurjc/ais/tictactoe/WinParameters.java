@@ -3,25 +3,19 @@ package es.codeurjc.ais.tictactoe;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Random;
 
 import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
 public class WinParameters {
 
 	protected ArrayList<Integer> parameter;
-	protected ArrayList<Integer> loserPositions;
-	protected static final ArrayList<Integer> cells = 
-			new ArrayList<>(Arrays.asList(0,1,2,3,4,5,6,7,8));
-	protected Random rnd = new Random();
 	protected int totalTurns;
 	
-	// Las posiciones pares de los arrays corresponden a celdas de lineas ganadoras
+	/* Las posiciones pares de los arrays corresponden a celdas de lineas ganadoras.
+	 * Son marcadas en los tests por el jugador que se busca que gane la partida.
+	 * El jugador perdedor marca las impares que no forman ninguna línea. */
 	@Parameters
 	public static Collection<Object[]> winPositions() {
 
@@ -50,8 +44,6 @@ public class WinParameters {
 		parameter = new ArrayList<>(Arrays.asList(firstCell,secondCell,thirdCell, fourthCell,
 				fifthCell, sixthCell));
 		totalTurns = parameter.size()-1;
-		loserPositions = (ArrayList<Integer>) cells.clone();
-		loserPositions.removeAll(parameter);
 	}
 	
 }
