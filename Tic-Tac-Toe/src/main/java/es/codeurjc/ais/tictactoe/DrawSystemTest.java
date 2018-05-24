@@ -10,14 +10,13 @@ import org.junit.runners.Parameterized;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 @RunWith(Parameterized.class)
 public class DrawSystemTest extends DrawParameters {
 
-	// private WebDriver driverFirefox = new FirefoxDriver();
 	private WebDriver driverChrome = new ChromeDriver();
 	private WebDriver driverChrome2 = new ChromeDriver();
-	// private WebDriverWait wait = new WebDriverWait(driverChrome, 30); // seconds
 
 	@BeforeClass
 	public static void setChromeDriver() {
@@ -59,6 +58,9 @@ public class DrawSystemTest extends DrawParameters {
 		
 		assertEquals("El mensaje mostrado por el alert en el navegador del jugador 2"
 				+ " no es el de empate.", alertP2, "Draw!");
+		
+		/* Los navegadores se cierran para evitar una acumulación indeseada de conexiones 
+		 * a la aplicación. */
 		
 		driverChrome.close();
 		driverChrome2.close();

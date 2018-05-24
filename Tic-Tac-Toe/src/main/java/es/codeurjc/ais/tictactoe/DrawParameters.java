@@ -13,6 +13,9 @@ public class DrawParameters {
 	protected boolean player1Turn = true;
 	protected ArrayList<Integer> parameter;
 	
+	/* Se cumple con todos los arrays siguientes que si el jugador que tiene el primer turno
+	 * marca las celdas correspondientes a las posiciones pares de los mismos y el otro jugador
+	 * elige aquellas en las posiciones impares, se alcanza una situación de empate. */
 	@Parameters
 	public static Collection<Object[]> DrawPositions() {
 		

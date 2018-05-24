@@ -15,18 +15,20 @@ public class WinParameters {
 	
 	/* Las posiciones pares de los arrays corresponden a celdas de lineas ganadoras.
 	 * Son marcadas en los tests por el jugador que se busca que gane la partida.
-	 * El jugador perdedor marca las impares que no forman ninguna línea. */
+	 * El jugador perdedor marca las impares que no forman ninguna línea. No se
+	 * emplean arrays de 6 elementos por ninguna razón concreta. 
+	*/
 	@Parameters
 	public static Collection<Object[]> winPositions() {
 
 		Object[][] winPositions = { { 0,3,1,5,2,7 },
 									{ 3,0,4,1,5,7 },
-									{ 3,0,4,1,5,8 },
-									{ 3,0,4,1,5,6 },
-									{ 3,0,4,1,5,7 },
-									{ 3,0,4,1,5,8 },
-									{ 3,0,4,1,5,6 }
-									};
+									{ 6,0,7,1,8,4 },
+									{ 0,1,3,4,6,8 },
+									{ 1,0,4,1,7,5 },
+									{ 2,3,5,4,8,6 },
+									{ 0,1,4,2,8,5 },
+									{ 6,7,4,8,2,5 } };
 
 		return Arrays.asList(winPositions);
 

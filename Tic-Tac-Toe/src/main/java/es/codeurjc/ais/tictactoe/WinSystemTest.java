@@ -13,11 +13,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 @RunWith(Parameterized.class)
 public class WinSystemTest extends WinParameters {
 
-	// private WebDriver driverFirefox = new FirefoxDriver();
 	private WebDriver driverChrome = new ChromeDriver();
 	private WebDriver driverChrome2 = new ChromeDriver();
-	//private WebDriverWait wait = new WebDriverWait(driverChrome, 3);
-	//private WebDriverWait wait2 = new WebDriverWait(driverChrome2, 3);
 
 	@BeforeClass
 	public static void setChromeDriver() {
@@ -106,6 +103,9 @@ public class WinSystemTest extends WinParameters {
 		
 		assertEquals("El mensaje mostrado por el alert en el navegador del jugador 2"
 				+ " no es el de empate.", alertP2, "Player 2 wins! Player 1 looses.");
+		
+		/* Los navegadores se cierran para evitar una acumulación indeseada de conexiones 
+		 * a la aplicación. */
 		
 		driverChrome.close();
 		driverChrome2.close();
