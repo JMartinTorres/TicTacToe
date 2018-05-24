@@ -1,0 +1,1244 @@
+Lanzada por el usuario Javier Mart�n Torres
+Running in Durability level: MAX_SURVIVABILITY
+[Pipeline] node
+Running on Jenkins  in C:\Users\Javier\.jenkins\workspace\TicTacToe_Tests
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Repository download)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] git
+ > git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/JMartinTorres/TicTacToe.git # timeout=10
+Fetching upstream changes from https://github.com/JMartinTorres/TicTacToe.git
+ > git.exe --version # timeout=10
+ > git.exe fetch --tags --progress https://github.com/JMartinTorres/TicTacToe.git +refs/heads/*:refs/remotes/origin/*
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/origin/master^{commit}" # timeout=10
+Checking out Revision 9b44890dd753104e52f80cbaab9d18e841189378 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 9b44890dd753104e52f80cbaab9d18e841189378
+ > git.exe branch -a -v --no-abbrev # timeout=10
+ > git.exe branch -D master # timeout=10
+ > git.exe checkout -b master 9b44890dd753104e52f80cbaab9d18e841189378
+Commit message: "Espera en DrawSystemTest"
+ > git.exe rev-list --no-walk 68a2dfd7261a8bdaf2f7a987ba029f58ae00175c # timeout=10
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Tests execution)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] bat
+[TicTacToe_Tests] Running batch script
+
+C:\Users\Javier\.jenkins\workspace\TicTacToe_Tests>C:\Users\Javier\.jenkins\tools\hudson.tasks.Maven_MavenInstallation\M3\bin\mvn -f Tic-Tac-Toe\pom.xml test 
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Tic-Tac-Toe 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ j.martintor-am.pazos ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 8 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ j.martintor-am.pazos ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ j.martintor-am.pazos ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\Javier\.jenkins\workspace\TicTacToe_Tests\Tic-Tac-Toe\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ j.martintor-am.pazos ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to C:\Users\Javier\.jenkins\workspace\TicTacToe_Tests\Tic-Tac-Toe\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ j.martintor-am.pazos ---
+[INFO] Surefire report directory: C:\Users\Javier\.jenkins\workspace\TicTacToe_Tests\Tic-Tac-Toe\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running es.codeurjc.ais.tictactoe.BoardDrawTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec - in es.codeurjc.ais.tictactoe.BoardDrawTest
+Running es.codeurjc.ais.tictactoe.BoardWinTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in es.codeurjc.ais.tictactoe.BoardWinTest
+Running es.codeurjc.ais.tictactoe.DrawSystemTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.5.9.RELEASE)
+
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 35457
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 6713
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 0
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 0
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 1
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 1
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 0
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 1
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 0
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":0}}' from client 0
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 0
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 0
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":1}}' from client 1
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 0
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 0
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":2}}' from client 0
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 0
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 0
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":3}}' from client 1
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 0
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 0
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":5}}' from client 0
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 0
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 0
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":4}}' from client 1
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 0
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 0
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":6}}' from client 0
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client 0
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 0
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":8}}' from client 1
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Player 2","id":2}}}' to client 0
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 0
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":7}}' from client 0
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 0
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1
+Sent message '{"action":"GAME_OVER","data":null}' to client 0
+Sent message '{"action":"GAME_OVER","data":null}' to client 1
+Sent message '{"action":"RECONNECT","data":null}' to client 1
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 13882
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 24810
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 2
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 2
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 3
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 3
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 2
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 3
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 3
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":0}}' from client 2
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 3
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 3
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":1}}' from client 3
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 3
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 3
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":2}}' from client 2
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 3
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 3
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":3}}' from client 3
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 3
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 3
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":4}}' from client 2
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 3
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 3
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":6}}' from client 3
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"O","name":"Player 2","id":2}}}' to client 3
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 3
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":5}}' from client 2
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 3
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 3
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":8}}' from client 3
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Player 2","id":2}}}' to client 3
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 3
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":7}}' from client 2
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 3
+Sent message '{"action":"GAME_OVER","data":null}' to client 2
+Sent message '{"action":"GAME_OVER","data":null}' to client 3
+Sent message '{"action":"RECONNECT","data":null}' to client 3
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 41049
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 41913
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 4
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 4
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 5
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 5
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 4
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 5
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 4
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 5
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":0}}' from client 4
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 4
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 5
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 4
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 5
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":2}}' from client 5
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client 4
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client 5
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 4
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 5
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":1}}' from client 4
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 4
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 5
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 4
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 5
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":3}}' from client 5
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 4
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 5
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 4
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 5
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":5}}' from client 4
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 4
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 5
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 4
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 5
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":4}}' from client 5
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 4
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 5
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 4
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 5
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":6}}' from client 4
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client 4
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client 5
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 4
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 5
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":7}}' from client 5
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client 4
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client 5
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 4
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 5
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":8}}' from client 4
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client 4
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client 5
+Sent message '{"action":"GAME_OVER","data":null}' to client 4
+Sent message '{"action":"GAME_OVER","data":null}' to client 5
+Sent message '{"action":"RECONNECT","data":null}' to client 5
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 32819
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 3161
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 6
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 6
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 7
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 7
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 6
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 7
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 6
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 7
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":0}}' from client 6
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 6
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 7
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 6
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 7
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":2}}' from client 7
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client 6
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client 7
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 6
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 7
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":1}}' from client 6
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 6
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 7
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 6
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 7
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":3}}' from client 7
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 6
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 7
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 6
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 7
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":5}}' from client 6
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 6
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 7
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 6
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 7
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":4}}' from client 7
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 6
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 7
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 6
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 7
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":6}}' from client 6
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client 6
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client 7
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 6
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 7
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":8}}' from client 7
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Player 2","id":2}}}' to client 6
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Player 2","id":2}}}' to client 7
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 6
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 7
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":7}}' from client 6
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 6
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 7
+Sent message '{"action":"GAME_OVER","data":null}' to client 6
+Sent message '{"action":"GAME_OVER","data":null}' to client 7
+Sent message '{"action":"RECONNECT","data":null}' to client 7
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 17812
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 40654
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 8
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 8
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 9
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 9
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 8
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 9
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 8
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 9
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":1}}' from client 8
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 8
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 9
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 8
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 9
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":0}}' from client 9
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client 8
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client 9
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 8
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 9
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":2}}' from client 8
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 8
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 9
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 8
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 9
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":5}}' from client 9
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"O","name":"Player 2","id":2}}}' to client 8
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"O","name":"Player 2","id":2}}}' to client 9
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 8
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 9
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":3}}' from client 8
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"Player 1","id":1}}}' to client 8
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"Player 1","id":1}}}' to client 9
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 8
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 9
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":6}}' from client 9
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"O","name":"Player 2","id":2}}}' to client 8
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"O","name":"Player 2","id":2}}}' to client 9
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 8
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 9
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":4}}' from client 8
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 8
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 9
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 8
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 9
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":7}}' from client 9
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client 8
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client 9
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 8
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 9
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":8}}' from client 8
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client 8
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client 9
+Sent message '{"action":"GAME_OVER","data":null}' to client 8
+Sent message '{"action":"GAME_OVER","data":null}' to client 9
+Sent message '{"action":"RECONNECT","data":null}' to client 9
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 27376
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 25843
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client a
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client a
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client b
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client b
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client a
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client b
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client a
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client b
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":1}}' from client a
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client a
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client b
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client a
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client b
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":0}}' from client b
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client a
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client b
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client a
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client b
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":3}}' from client a
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"Player 1","id":1}}}' to client a
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"Player 1","id":1}}}' to client b
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client a
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client b
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":2}}' from client b
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client a
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client b
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client a
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client b
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":5}}' from client a
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client a
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client b
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client a
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client b
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":4}}' from client b
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client a
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client b
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client a
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client b
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":6}}' from client a
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client a
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client b
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client a
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client b
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":7}}' from client b
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client a
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client b
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client a
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client b
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":8}}' from client a
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client a
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client b
+Sent message '{"action":"GAME_OVER","data":null}' to client a
+Sent message '{"action":"GAME_OVER","data":null}' to client b
+Sent message '{"action":"RECONNECT","data":null}' to client b
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 40578
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 36569
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client c
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client c
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client d
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client d
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client c
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client d
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client c
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client d
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":1}}' from client c
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client c
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client d
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client c
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client d
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":0}}' from client d
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client c
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client d
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client c
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client d
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":3}}' from client c
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"Player 1","id":1}}}' to client c
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"Player 1","id":1}}}' to client d
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client c
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client d
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":2}}' from client d
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client c
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client d
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client c
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client d
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":4}}' from client c
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client c
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client d
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client c
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client d
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":5}}' from client d
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"O","name":"Player 2","id":2}}}' to client c
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"O","name":"Player 2","id":2}}}' to client d
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client c
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client d
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":6}}' from client c
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client c
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client d
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client c
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client d
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":7}}' from client d
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client c
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client d
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client c
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client d
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":8}}' from client c
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client c
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client d
+Sent message '{"action":"GAME_OVER","data":null}' to client c
+Sent message '{"action":"GAME_OVER","data":null}' to client d
+Sent message '{"action":"RECONNECT","data":null}' to client d
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 10474
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 25388
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client e
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client e
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client f
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client f
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client e
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client f
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client e
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client f
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":1}}' from client e
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client e
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client f
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client e
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client f
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":0}}' from client f
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client e
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client f
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client e
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client f
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":4}}' from client e
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client e
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client f
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client e
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client f
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":2}}' from client f
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client e
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client f
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client e
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client f
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":5}}' from client e
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client e
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client f
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client e
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client f
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":3}}' from client f
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client e
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client f
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client e
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client f
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":6}}' from client e
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client e
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client f
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client e
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client f
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":7}}' from client f
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client e
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client f
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client e
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client f
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":8}}' from client e
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client e
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client f
+Sent message '{"action":"GAME_OVER","data":null}' to client e
+Sent message '{"action":"GAME_OVER","data":null}' to client f
+Sent message '{"action":"RECONNECT","data":null}' to client f
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 159.432 sec - in es.codeurjc.ais.tictactoe.DrawSystemTest
+Running es.codeurjc.ais.tictactoe.TicTacToeGameDrawTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.007 sec - in es.codeurjc.ais.tictactoe.TicTacToeGameDrawTest
+Running es.codeurjc.ais.tictactoe.TicTacToeGameWinTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec - in es.codeurjc.ais.tictactoe.TicTacToeGameWinTest
+Running es.codeurjc.ais.tictactoe.WinSystemTest
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 38890
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 46304
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 10
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 10
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 11
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 11
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 10
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 11
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 10
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 11
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":0}}' from client 10
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 10
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 11
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 10
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 11
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":3}}' from client 11
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 10
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 11
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 10
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 11
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":1}}' from client 10
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 10
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 11
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 10
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 11
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":5}}' from client 11
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"O","name":"Player 2","id":2}}}' to client 10
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"O","name":"Player 2","id":2}}}' to client 11
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 10
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 11
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":2}}' from client 10
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 10
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 11
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[0,1,2]}}' to client 10
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[0,1,2]}}' to client 11
+Sent message '{"action":"RECONNECT","data":null}' to client 11
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 43000
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 42036
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 12
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 12
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 13
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 13
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 12
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 13
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 12
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 13
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":3}}' from client 12
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"Player 1","id":1}}}' to client 12
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"Player 1","id":1}}}' to client 13
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 12
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 13
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":0}}' from client 13
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client 12
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client 13
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 12
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 13
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":5}}' from client 12
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 12
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 13
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 12
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 13
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":1}}' from client 13
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 12
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 13
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 12
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 13
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":7}}' from client 12
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 12
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 13
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 12
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 13
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":2}}' from client 13
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client 12
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client 13
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[0,1,2]}}' to client 12
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[0,1,2]}}' to client 13
+Sent message '{"action":"RECONNECT","data":null}' to client 13
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 20096
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 10609
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 14
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 14
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 15
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 15
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 14
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 15
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 14
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 15
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":3}}' from client 14
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"Player 1","id":1}}}' to client 14
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"Player 1","id":1}}}' to client 15
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 14
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 15
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":0}}' from client 15
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client 14
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client 15
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 14
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 15
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":4}}' from client 14
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 14
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 15
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 14
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 15
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":1}}' from client 15
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 14
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 15
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 14
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 15
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":5}}' from client 14
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 14
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 15
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[3,4,5]}}' to client 14
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[3,4,5]}}' to client 15
+Sent message '{"action":"RECONNECT","data":null}' to client 15
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 4876
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 41382
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 16
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 16
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 17
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 17
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 16
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 17
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 16
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 17
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":0}}' from client 16
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 16
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 17
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 16
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 17
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":3}}' from client 17
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 16
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 17
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 16
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 17
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":1}}' from client 16
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 16
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 17
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 16
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 17
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":4}}' from client 17
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 16
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 17
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 16
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 17
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":7}}' from client 16
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 16
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 17
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 16
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 17
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":5}}' from client 17
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"O","name":"Player 2","id":2}}}' to client 16
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"O","name":"Player 2","id":2}}}' to client 17
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[3,4,5]}}' to client 16
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[3,4,5]}}' to client 17
+Sent message '{"action":"RECONNECT","data":null}' to client 17
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 26060
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 3092
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 18
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 18
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 19
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 19
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 18
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 19
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 18
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 19
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":6}}' from client 18
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client 18
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client 19
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 18
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 19
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":0}}' from client 19
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client 18
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client 19
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 18
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 19
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":7}}' from client 18
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 18
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 19
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 18
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 19
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":1}}' from client 19
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 18
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 19
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 18
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 19
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":8}}' from client 18
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client 18
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client 19
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[6,7,8]}}' to client 18
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[6,7,8]}}' to client 19
+Sent message '{"action":"RECONNECT","data":null}' to client 19
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 33139
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 3203
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 1a
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 1a
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 1b
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 1b
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 1a
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 1b
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1a
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1b
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":0}}' from client 1a
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1a
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1b
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1a
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1b
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":6}}' from client 1b
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1a
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1b
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1a
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1b
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":1}}' from client 1a
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1a
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1b
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1a
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1b
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":7}}' from client 1b
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1a
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1b
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1a
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1b
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":4}}' from client 1a
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1a
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1b
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1a
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1b
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":8}}' from client 1b
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1a
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1b
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[6,7,8]}}' to client 1a
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[6,7,8]}}' to client 1b
+Sent message '{"action":"RECONNECT","data":null}' to client 1b
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 45746
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 19741
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 1c
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 1c
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 1d
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 1d
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 1c
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 1d
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1c
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1d
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":0}}' from client 1c
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1c
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1d
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1c
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1d
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":1}}' from client 1d
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1c
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1d
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1c
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1d
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":3}}' from client 1c
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1c
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1d
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1c
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1d
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":4}}' from client 1d
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1c
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1d
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1c
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1d
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":6}}' from client 1c
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1c
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1d
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[0,3,6]}}' to client 1c
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[0,3,6]}}' to client 1d
+Sent message '{"action":"RECONNECT","data":null}' to client 1d
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 14477
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 46070
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 1e
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 1e
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 1f
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 1f
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 1e
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 1f
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1e
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1f
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":1}}' from client 1e
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1e
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1f
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1e
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1f
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":0}}' from client 1f
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1e
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1f
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1e
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1f
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":4}}' from client 1e
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1e
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1f
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1e
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1f
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":3}}' from client 1f
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1e
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1f
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1e
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 1f
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":8}}' from client 1e
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1e
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client 1f
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1e
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 1f
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":6}}' from client 1f
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1e
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"O","name":"Player 2","id":2}}}' to client 1f
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[0,3,6]}}' to client 1e
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[0,3,6]}}' to client 1f
+Sent message '{"action":"RECONNECT","data":null}' to client 1f
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 16386
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 11378
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 20
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 20
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 21
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 21
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 20
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 21
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 20
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 21
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":1}}' from client 20
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 20
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 21
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 20
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 21
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":0}}' from client 21
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client 20
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client 21
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 20
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 21
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":4}}' from client 20
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 20
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 21
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 20
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 21
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":2}}' from client 21
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client 20
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client 21
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 20
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 21
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":7}}' from client 20
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 20
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 21
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[1,4,7]}}' to client 20
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[1,4,7]}}' to client 21
+Sent message '{"action":"RECONNECT","data":null}' to client 21
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 16754
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 27335
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 22
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 22
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 23
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 23
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 22
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 23
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 22
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 23
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":0}}' from client 22
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 22
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 23
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 22
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 23
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":1}}' from client 23
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 22
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 23
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 22
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 23
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":2}}' from client 22
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 22
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 23
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 22
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 23
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":4}}' from client 23
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 22
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 23
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 22
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 23
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":5}}' from client 22
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 22
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 23
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 22
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 23
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":7}}' from client 23
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client 22
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client 23
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[1,4,7]}}' to client 22
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[1,4,7]}}' to client 23
+Sent message '{"action":"RECONNECT","data":null}' to client 23
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 46155
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 20806
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 24
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 24
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 25
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 25
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 24
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 25
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 24
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 25
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":2}}' from client 24
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 24
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 25
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 24
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 25
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":3}}' from client 25
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 24
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"O","name":"Player 2","id":2}}}' to client 25
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 24
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 25
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":5}}' from client 24
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 24
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 25
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 24
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 25
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":4}}' from client 25
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 24
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 25
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 24
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 25
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":8}}' from client 24
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client 24
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client 25
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[2,5,8]}}' to client 24
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[2,5,8]}}' to client 25
+Sent message '{"action":"RECONNECT","data":null}' to client 25
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 23990
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 47058
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 26
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 26
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 27
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 27
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 26
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 27
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 26
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 27
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":3}}' from client 26
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"Player 1","id":1}}}' to client 26
+Sent message '{"action":"MARK","data":{"cellId":3,"player":{"label":"X","name":"Player 1","id":1}}}' to client 27
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 26
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 27
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":2}}' from client 27
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client 26
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client 27
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 26
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 27
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":4}}' from client 26
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 26
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 27
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 26
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 27
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":5}}' from client 27
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"O","name":"Player 2","id":2}}}' to client 26
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"O","name":"Player 2","id":2}}}' to client 27
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 26
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 27
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":6}}' from client 26
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client 26
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client 27
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 26
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 27
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":8}}' from client 27
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Player 2","id":2}}}' to client 26
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Player 2","id":2}}}' to client 27
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[2,5,8]}}' to client 26
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[2,5,8]}}' to client 27
+Sent message '{"action":"RECONNECT","data":null}' to client 27
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 21955
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 7882
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 28
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 28
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 29
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 29
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 28
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 29
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 28
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 29
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":0}}' from client 28
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 28
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"X","name":"Player 1","id":1}}}' to client 29
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 28
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 29
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":1}}' from client 29
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 28
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"O","name":"Player 2","id":2}}}' to client 29
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 28
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 29
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":4}}' from client 28
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 28
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 29
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 28
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 29
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":2}}' from client 29
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client 28
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client 29
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 28
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 29
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":8}}' from client 28
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client 28
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client 29
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[0,4,8]}}' to client 28
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[0,4,8]}}' to client 29
+Sent message '{"action":"RECONNECT","data":null}' to client 29
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 35094
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 10785
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 2a
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 2a
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 2b
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 2b
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 2a
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 2b
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2a
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2b
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":1}}' from client 2a
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2a
+Sent message '{"action":"MARK","data":{"cellId":1,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2b
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2a
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2b
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":0}}' from client 2b
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2a
+Sent message '{"action":"MARK","data":{"cellId":0,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2b
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2a
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2b
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":2}}' from client 2a
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2a
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2b
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2a
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2b
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":4}}' from client 2b
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2a
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2b
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2a
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2b
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":5}}' from client 2a
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2a
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2b
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2a
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2b
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":8}}' from client 2b
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2a
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2b
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[0,4,8]}}' to client 2a
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[0,4,8]}}' to client 2b
+Sent message '{"action":"RECONNECT","data":null}' to client 2b
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 4331
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 11364
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 2c
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 2c
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 2d
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 2d
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 2c
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 2d
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2c
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2d
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":6}}' from client 2c
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2c
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2d
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2c
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2d
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":7}}' from client 2d
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2c
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2d
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2c
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2d
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":4}}' from client 2c
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2c
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2d
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2c
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2d
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":8}}' from client 2d
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2c
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2d
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2c
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2d
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":2}}' from client 2c
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2c
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2d
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[6,4,2]}}' to client 2c
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"X","name":"Player 1","id":1},"pos":[6,4,2]}}' to client 2d
+Sent message '{"action":"RECONNECT","data":null}' to client 2d
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 3466
+Only local connections are allowed.
+Starting ChromeDriver 2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb) on port 2761
+Only local connections are allowed.
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 1"}}' from client 2e
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 2e
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1}]}' to client 2f
+Received message '{"action":"JOIN_GAME","data":{"name":"Player 2"}}' from client 2f
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 2e
+Sent message '{"action":"JOIN_GAME","data":[{"label":"X","name":"Player 1","id":1},{"label":"O","name":"Player 2","id":2}]}' to client 2f
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2e
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2f
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":7}}' from client 2e
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2e
+Sent message '{"action":"MARK","data":{"cellId":7,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2f
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2e
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2f
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":6}}' from client 2f
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2e
+Sent message '{"action":"MARK","data":{"cellId":6,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2f
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2e
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2f
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":8}}' from client 2e
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2e
+Sent message '{"action":"MARK","data":{"cellId":8,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2f
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2e
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2f
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":4}}' from client 2f
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2e
+Sent message '{"action":"MARK","data":{"cellId":4,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2f
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2e
+Sent message '{"action":"SET_TURN","data":{"label":"X","name":"Player 1","id":1}}' to client 2f
+Received message '{"action":"MARK","data":{"playerId":1,"cellId":5}}' from client 2e
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2e
+Sent message '{"action":"MARK","data":{"cellId":5,"player":{"label":"X","name":"Player 1","id":1}}}' to client 2f
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2e
+Sent message '{"action":"SET_TURN","data":{"label":"O","name":"Player 2","id":2}}' to client 2f
+Received message '{"action":"MARK","data":{"playerId":2,"cellId":2}}' from client 2f
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2e
+Sent message '{"action":"MARK","data":{"cellId":2,"player":{"label":"O","name":"Player 2","id":2}}}' to client 2f
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[6,4,2]}}' to client 2e
+Sent message '{"action":"GAME_OVER","data":{"player":{"label":"O","name":"Player 2","id":2},"pos":[6,4,2]}}' to client 2f
+Sent message '{"action":"RECONNECT","data":null}' to client 2f
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 263.207 sec - in es.codeurjc.ais.tictactoe.WinSystemTest
+
+Results :
+
+Tests run: 72, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 07:14 min
+[INFO] Finished at: 2018-05-24T18:19:17+02:00
+[INFO] Final Memory: 30M/276M
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] junit
+Grabando resultados de tests
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
